@@ -1,0 +1,93 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+
+@import 'liferay-font-awesome/scss/font-awesome';
+@import 'liferay-font-awesome/scss/glyphicons';
+
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+
+body {
+    background-color: #F1F3F8;
+}
+
+#wrapper {
+    top: 70px
+}
+
+
+
+header.ml-top-bar {
+    height: 70px;
+    border-bottom: 2px solid #5cc2d9;
+    background-color: #24416a; 
+    color: white;
+    line-height:70px;
+}
+
+.ml-top-bar-section {
+
+    &:first-of-type {
+        width: 93px;
+    }
+
+    .portlet-header { 
+        display: none;
+    }
+}
+
+.ml-top-search {
+    width: calc(100% - 279px);
+    padding-left: 93px;
+}
+
+.logo {
+    height: 46px;
+    width: 40px;
+    display: block;
+    margin-top: 12px;
+}
+
+.main-content {
+    background-color: #F1F3F8;
+
+    & .container-fluid-max-xl {
+        max-width: inherit;
+    }
+
+    & .portlet-header {
+        display: none;
+    }
+
+    & .portlet-content {
+        background-color: #F1F3F8;
+    }
+}
+
+.sidebar {
+    color: #343a40;
+    font-size: 18px;
+    top: 70px;
+
+        /* unvisited link */
+    & a:link {
+        color: #343a40;
+    }
+    
+    /* visited link */
+    & a:visited {
+        color: #343a40;
+    }
+    
+    /* mouse over link */
+    & a:hover {
+        color: hotpink;
+    }
+    
+    /* selected link */
+    & a:active {
+        color: blue;
+    }
+}

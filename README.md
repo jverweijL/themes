@@ -1,0 +1,1 @@
+1. copy `css`, `images` and `templates` from modules/apps/frontend-theme/frontend-theme-classic/src
