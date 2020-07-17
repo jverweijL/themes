@@ -37,7 +37,7 @@
 	<div class="ml-top-bar-section float-left"></div>
 </header>
 
-<div class="container-fluid" id="wrapper">
+<div class="container-fluid p-0" id="wrapper">
 	<div class="row">
 		<div class="col-sm-2">
 			<#include "custom/sidebar.ftl" />
