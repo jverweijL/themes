@@ -13,11 +13,38 @@ body {
     background-color: #F1F3F8;
 }
 
-#wrapper {
-    top: 70px
+.outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
 
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 279px);
+}
+
+#portlet_com_liferay_portal_search_web_search_bar_portlet_SearchBarPortlet_INSTANCE_sbhdr {
+ margin-bottom: 0px;   
+}
+
+#header {
+    height: 70px;
+}
+
+.sidebar-content{
+    background-color: white;
+    min-height: calc(100vh);
+}
 
 header.ml-top-bar {
     height: 70px;
@@ -28,6 +55,7 @@ header.ml-top-bar {
 }
 
 .ml-top-bar-section {
+    line-height:70px;
 
     &:first-of-type {
         width: 93px;

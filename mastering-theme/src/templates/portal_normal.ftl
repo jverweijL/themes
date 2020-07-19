@@ -23,26 +23,41 @@
 
 <@liferay.control_menu />
 
-<header class="ml-top-bar fixed-top">
-	<div class="ml-top-bar-section float-left">
-		<a href="${company_url}"><img class="logo mx-auto" src="${images_folder}/logo.png" /></a>
-	</div>
-	<div class="ml-top-bar-section ml-top-search float-left">
-		<@liferay_portlet["runtime"]
-    		portletName="com_liferay_portal_search_web_search_bar_portlet_SearchBarPortlet"
-			instanceId="sbhdr"
-			defaultPreferences="${searchwidgetpreferences}"
-		/>
-	</div>
-	<div class="ml-top-bar-section float-left"></div>
-</header>
+
 
 <div class="container-fluid p-0" id="wrapper">
-	<div class="row">
-		<div class="col-sm-2">
-			<#include "custom/sidebar.ftl" />
+	<#if !onepager_mode>
+		<div class="row" id="header">
+			<div class="col-sm">			
+				<header class="ml-top-bar fixed-top">
+					<div class="ml-top-bar-section float-left">
+						<a href="${company_url}"><img class="logo mx-auto" src="${images_folder}/logo.png" /></a>
+					</div>
+					<div class="ml-top-bar-section ml-top-search float-left">
+						<div class="outer">
+							<div class="middle">
+								<div class="inner">
+								<@liferay_portlet["runtime"]
+									portletName="com_liferay_portal_search_web_search_bar_portlet_SearchBarPortlet"
+									instanceId="sbhdr"
+									defaultPreferences="${searchwidgetpreferences}"
+								/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ml-top-bar-section float-left"></div>
+				</header>				
+			</div>
 		</div>
-		<div class="col-sm main-content">
+	</#if>
+	<div class="row">
+		<#if !onepager_mode>
+			<div class="col-sm-2 sidebar-content pt-3">
+				<#include "custom/sidebar.ftl" />
+			</div>
+		</#if>
+		<div class="col-sm main-content ${onepager_mode?then('','pt-3')}">
 			<section id="content">
 				<#if selectable>
 					<@liferay_util["include"] page=content_include />
